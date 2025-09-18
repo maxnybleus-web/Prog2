@@ -72,7 +72,7 @@ def hypersphere_exact(d): #Ex2, real value
     return volume
     
     
-    return
+    
 
 #Ex3: parallel code - parallelize for loop
 
@@ -96,7 +96,7 @@ def sphere_volume_parallel1(n,d,np=10):
          
     #n is the number of points
     # d is the number of dimensions of the sphere
-    pass
+   
     #np is the number of processes
 
 #Ex4: parallel code - parallelize actual computations by splitting data
@@ -112,14 +112,13 @@ def sphere_volume_parallel2(n,d,np=10):
     return mean(total_points)
     
     
-   
-   
+      
     #n is the number of points
     # d is the number of dimensions of the sphere
     #np is the number of processes
 
 
-    return 
+   
     
 def main():
     #Ex1
@@ -159,7 +158,7 @@ def main():
 
 
   start3 = pc()
-  print(sphere_volume_parallel2(10**6, 11, 10))
+  print(sphere_volume_parallel2(10**6, 2, 10))
   stop3 = pc()
   print(stop3-start3)
 
