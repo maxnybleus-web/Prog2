@@ -19,18 +19,9 @@ def approximate_pi(n): # Ex1
 
     points = [(random.uniform(-1,1), random.uniform(-1,1)) for i in range(n)]          
 
-    #first code test to check logic
-        #check if points is insde the circle
-
-        #n_c = 0
-    """ for tpl in points:
-         f = lambda x,y : x**2 + y**2
-         d = f(tpl[0], tpl[1])
-         #print(d, "där är d")
-         if d <= 1:
-              n_c += 1 """
+   
     
-    # second code using more HOF 
+    
     d = list(map(lambda p: p[0]**2 + p[1]**2, points)) # calcs all distances
     n_c = list(filter(lambda t: t <= 1, d)) # calcs all inside the circle
     pi = 4* len(n_c)/len(points)
@@ -46,13 +37,13 @@ def approximate_pi(n): # Ex1
    
     points_outside_x, points_outside_y = map(list,zip(*points_outside)) if points_circle else ([], [])
     
-    plt.scatter(points_circle_x, points_circle_y, color = 'red', s = 15)
-    plt.scatter(points_outside_x, points_outside_y, color = 'blue', s = 15)
+    #plt.scatter(points_circle_x, points_circle_y, color = 'red', s = 15)
+    #plt.scatter(points_outside_x, points_outside_y, color = 'blue', s = 15)
 
-    plt.xlim(-1,1)
-    plt.ylim(-1,1)
-    plt.gca().set_aspect('equal')
-    plt.show()
+    #plt.xlim(-1,1)
+    #plt.ylim(-1,1)
+    #plt.gca().set_aspect('equal')
+    #plt.show()
 
     
     return pi
