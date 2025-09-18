@@ -158,7 +158,7 @@ def main():
 
 
   start3 = pc()
-  print(sphere_volume_parallel2(10**6, 2, 10))
+  print(sphere_volume_parallel2(10**6, 11, 10))
   stop3 = pc()
   print(stop3-start3)
 

@@ -16,7 +16,7 @@ class Test(unittest.TestCase):
 
         start = pc()
         app_vol = sphere_volume_parallel2(n, d, np)
-        print(app_vol)
+        print(app_vol,"här")
         stop = pc()
         par = stop - start
 
