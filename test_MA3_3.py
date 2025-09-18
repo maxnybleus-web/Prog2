@@ -25,5 +25,5 @@ class Test(unittest.TestCase):
         self.assertLess(app_vol, 2.2)
         self.assertLess(par, seq)
 
-if __name__ == "__main__": #this was missing when I got the file?
+if __name__ == "__main__": #this was missing when I got the file? Added this 
     unittest.main()

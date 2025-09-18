@@ -102,7 +102,18 @@ def sphere_volume_parallel1(n,d,np=10):
 #Ex4: parallel code - parallelize actual computations by splitting data
 def sphere_volume_parallel2(n,d,np=10):
 
+    p = [(n//np, d)]
+    total_points = []  
 
+    with future.ThreadPoolExecutor() as ex:
+         for i in range(np):
+            
+            total_points += (list(ex.map(dummy, p)))
+    
+
+    return mean(total_points)
+    
+    
    
    
     #n is the number of points
@@ -135,7 +146,7 @@ def main():
     #print(f"Actual volume of {d} dimentional sphere = {hypersphere_exact(d)}")
 
     #Ex3
-    n = 100000
+  """   n = 100000
     d = 11
     start = pc()
     for y in range (10):
@@ -146,7 +157,13 @@ def main():
     start2 = pc()
     sphere_volume_parallel1(n,d)
     stop2 = pc()
-    print(f'Parallell time of {d} and {n}: {stop2-start2}s')
+    print(f'Parallell time of {d} and {n}: {stop2-start2}s') """
+
+
+  start3 = pc()
+  print(sphere_volume_parallel2(10**6, 11, 10))
+  stop3 = pc()
+  print(stop3-start3)
 
 
 """     #Ex4
@@ -159,7 +176,7 @@ def main():
     print("What is parallel time?")
  """
     
-    
+
 
 if __name__ == '__main__':
 	main()
