@@ -102,13 +102,11 @@ def sphere_volume_parallel1(n,d,np=10):
 #Ex4: parallel code - parallelize actual computations by splitting data
 def sphere_volume_parallel2(n,d,np=10):
 
-    p = [(n//np, d)]
-    total_points = []  
+    p = [(n//np, d) for _  in range(np)]
+    
 
-    with future.ThreadPoolExecutor() as ex:
-         for i in range(np):
-            
-            total_points += (list(ex.map(dummy, p)))
+    with future.ProcessPoolExecutor() as ex:
+         total_points = list(ex.map(dummy, p))
     
 
     return mean(total_points)
